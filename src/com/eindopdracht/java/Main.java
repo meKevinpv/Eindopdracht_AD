@@ -12,6 +12,8 @@ public class Main {
 
     public static void main(String[] args) {
         Parser validator = new Parser("C:\\Users\\Kevin\\Documents\\Eindopdracht\\Eindopdracht_AD\\src\\com\\eindopdracht\\java\\data.csv");
+
     }
+
 
 }

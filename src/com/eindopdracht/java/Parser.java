@@ -13,8 +13,8 @@ import java.util.Map;
 public class Parser {
     private ArrayList<Lego> dataSet = new ArrayList<Lego>();
     private LinkedList<Lego> doublyLinkedList = new LinkedList<Lego>();
-    private int[] idArray = new int[]{};
-    //private List<Lego> singleLinkList = new List
+    private SinglyLinkedList<Lego> singlyLinkedList = new SinglyLinkedList<Lego>();
+
     public Parser(String fileLocation){
         String csvFile = fileLocation;
         //String csvFile = "C:\\Users\\Kevin\\Documents\\GitHub\\ThinkDataStructures\\Eindopdracht\\src\\com\\eindopdracht\\java\\data.csv";
@@ -46,7 +46,7 @@ public class Parser {
                                 stringArray[13]);
                         dataSet.add(tempLego);
                         doublyLinkedList.add(tempLego);
-                        idArray[i]=validationNum;
+                        singlyLinkedList.add(tempLego);
                     }
                 }
                 lines++;
@@ -71,10 +71,6 @@ public class Parser {
     public ArrayList<Lego> getLegoArray() {
         return dataSet;
     }
-
-    public int[] getIntArray() {
-        return idArray;
-    }
     public LinkedList<Lego> getLinkedList(){
         return doublyLinkedList;
     }
@@ -94,4 +90,5 @@ public class Parser {
         System.out.println("line: "+lineNo+" INVALID LINE: Not enough values");
         return returnInt;
     }
+
 }
