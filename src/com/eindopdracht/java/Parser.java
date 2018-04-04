@@ -13,18 +13,9 @@ import java.util.Map;
 public class Parser {
     private ArrayList<Lego> dataSet = new ArrayList<Lego>();
     private LinkedList<Lego> doublyLinkedList = new LinkedList<Lego>();
-<<<<<<< HEAD
-<<<<<<< HEAD
     private int[] idArray = new int[6000];
     //private List<Lego> singleLinkList = new List
-=======
     private SinglyLinkedList<Lego> singlyLinkedList = new SinglyLinkedList<Lego>();
-
->>>>>>> 046d40631d606965ea9c9d1d26b7eba4cd7823f8
-=======
-    private SinglyLinkedList<Lego> singlyLinkedList = new SinglyLinkedList<Lego>();
-
->>>>>>> 046d40631d606965ea9c9d1d26b7eba4cd7823f8
     public Parser(String fileLocation){
         String csvFile = fileLocation;
         //String csvFile = "C:\\Users\\Kevin\\Documents\\GitHub\\ThinkDataStructures\\Eindopdracht\\src\\com\\eindopdracht\\java\\data.csv";
