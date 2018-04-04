@@ -1,7 +1,7 @@
 package com.eindopdracht.java;
 //GBP_MSRP","USD_MSRP","CAD_MSRP","EUR_MSRP","Packaging","Availability"
 public class Lego {
-    public String item_number;
+    public int item_number;
     public String name;
     public String Year;
     public String theme;
@@ -15,7 +15,7 @@ public class Lego {
     public String EUR_MSRP;
     public String packaging;
     public String availability;
-    public Lego(String tItem_number,
+    public Lego(int tItem_number,
                 String tName,
                 String tYear,
                 String tTheme,
@@ -30,19 +30,19 @@ public class Lego {
                 String tPackaging,
                 String tAvailability)
     {
-        tItem_number = item_number;
-        tName = name;
-        tYear = Year;
-        tTheme = theme;
-        tSubTheme = subTheme;
-        tpieces = pieces;
-        tMiniFigures = miniFigures;
-        tImg_URL = img_URL;
-        tGBP_MSRP = GBP_MSRP;
-        tUSD_MSRP = USD_MSRP;
-        tCAD_MSRP = CAD_MSRP;
-        tEUR_MSRP = EUR_MSRP;
-        tPackaging = packaging;
-        tAvailability = availability;
+        item_number = tItem_number;
+        name = tName;
+        Year = tYear;
+        theme = tTheme;
+        subTheme = tSubTheme;
+        pieces = tpieces;
+        miniFigures = tMiniFigures;
+        img_URL = tImg_URL;
+        GBP_MSRP = tGBP_MSRP;
+        USD_MSRP = tUSD_MSRP;
+        CAD_MSRP = tCAD_MSRP;
+        EUR_MSRP = tEUR_MSRP;
+        packaging = tPackaging;
+        availability = tAvailability;
     }
 }
