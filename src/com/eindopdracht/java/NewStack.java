@@ -7,16 +7,10 @@ public class NewStack {
     int size;
     Lego[] stack;
 
-    private ArrayList<Lego> dataSet = new ArrayList<>();
-
-    public NewStack(){
-        size = dataSet.size();
+    public NewStack(int parSize){
+        size = parSize;
         stack= new Lego[size];
         top=-1;
-
-        Parser validator = new Parser("C:\\Users\\Cornee\\Google Drive\\Eindopdracht_AD\\src\\com\\eindopdracht\\java\\data.csv");
-        System.out.println("NewQueue is active");
-        dataSet = validator.getLegoArray();
     }
 
     public void push(Lego value){
@@ -32,7 +26,7 @@ public class NewStack {
         if(!isEmpty()) {
             top = top - 1;
         } else {
-            System.out.println("Can't pop...stack is empty");
+            System.out.println("Stack leeg!");
         }
     }
 
@@ -43,8 +37,12 @@ public class NewStack {
     public void display(){
 
         for(int i = 0; i <= top; i++){
-            System.out.print(stack[i]+ " ");
+            System.out.print(stack[i] + " ");
         }
         System.out.println();
+    }
+
+    public int size() {
+        return this.top;
     }
 }

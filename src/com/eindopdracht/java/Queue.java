@@ -1,36 +1,29 @@
 package com.eindopdracht.java;
 
 import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Iterator;
 
 class NewQueue {
+    private LinkedList<Lego> list = new LinkedList<Lego>();
 
-    private LinkedList<Lego> dataSet = new LinkedList<>();
-    private Queue<Lego> queue = new LinkedList<>();
-
-    public NewQueue() {
-        Parser validator = new Parser("C:\\Users\\Cornee\\Google Drive\\Eindopdracht_AD\\src\\com\\eindopdracht\\java\\data.csv");
-        System.out.println("NewQueue is active");
-        dataSet = validator.getLinkedList();
-
-        Queue<Lego> queue = new LinkedList<>();
-
-        // .addAll() kan een collectie ontvangen en deze in een datatype storen.
-        queue.addAll(dataSet);
-
-        listQueue();
+    public void enqueue(Lego item) {
+        list.addLast(item);
     }
-
-    private void listQueue() {
-        Iterator it = queue.iterator();
-
-        System.out.println("Queue size:" + queue.size());
-
-        while(it.hasNext())
-        {
-            String iteratorValue = it.next().toString();
-            System.out.println("Queue Next Value :"+iteratorValue);
-        }
+    public Lego dequeue() {
+        return list.poll();
+    }
+    public boolean hasItems() {
+        return !list.isEmpty();
+    }
+    public int size() {
+        return list.size();
+    }
+    public Lego peek() {
+        return list.peek();
+    }
+    public Lego poll() {
+        return list.poll();
+    }
+    public Lego remove() {
+        return list.remove();
     }
 }
