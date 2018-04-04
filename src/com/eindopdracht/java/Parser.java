@@ -7,10 +7,14 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 public class Parser {
     private ArrayList<Lego> dataSet = new ArrayList<Lego>();
+    private LinkedList<Lego> doublyLinkedList = new LinkedList<Lego>();
+    private int[] idArray = new int[]{};
+    //private List<Lego> singleLinkList = new List
     public Parser(String fileLocation){
         String csvFile = fileLocation;
         //String csvFile = "C:\\Users\\Kevin\\Documents\\GitHub\\ThinkDataStructures\\Eindopdracht\\src\\com\\eindopdracht\\java\\data.csv";
@@ -18,6 +22,7 @@ public class Parser {
         String line = "";
         String cvsSplitBy = ",";
         int lines = 1;
+        int i =0;
         try {
             br = new BufferedReader(new FileReader(csvFile));
             while ((line = br.readLine()) != null) {
@@ -25,21 +30,23 @@ public class Parser {
                     String[] stringArray = line.split(cvsSplitBy);
                     int validationNum = validateLines(stringArray, lines);
                     if (validationNum != -1) {
-                        dataSet.add(new Lego(validationNum,
-                                        stringArray[1],
-                                        stringArray[2],
-                                        stringArray[3],
-                                        stringArray[4],
-                                        stringArray[5],
-                                        stringArray[6],
-                                        stringArray[7],
-                                        stringArray[8],
-                                        stringArray[9],
-                                        stringArray[10],
-                                        stringArray[11],
-                                        stringArray[12],
-                                        stringArray[13]
-                                ));
+                        Lego tempLego = new Lego(validationNum,
+                                stringArray[1],
+                                stringArray[2],
+                                stringArray[3],
+                                stringArray[4],
+                                stringArray[5],
+                                stringArray[6],
+                                stringArray[7],
+                                stringArray[8],
+                                stringArray[9],
+                                stringArray[10],
+                                stringArray[11],
+                                stringArray[12],
+                                stringArray[13]);
+                        dataSet.add(tempLego);
+                        doublyLinkedList.add(tempLego);
+                        idArray[i]=validationNum;
                     }
                 }
                 lines++;
@@ -66,15 +73,12 @@ public class Parser {
     }
 
     public int[] getIntArray() {
-        int i=0;
-        int[] intArray = {0};
-        while(i<dataSet.size()){
-            intArray[i] = dataSet.get(i).item_number;
-        }
-        return intArray;
-
-
+        return idArray;
     }
+    public LinkedList<Lego> getLinkedList(){
+        return doublyLinkedList;
+    }
+
     private static int validateLines(String[] stringArr, int lineNo){
         int returnInt = -1;
         if(stringArr.length==14){
