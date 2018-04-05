@@ -93,6 +93,31 @@ public class MainTest {
 
     }
 
+    @Test
+    public void Quicksort(){
+        Quicksort quicksort = new Quicksort();
+        sorted = quicksort.getLegoArray();
+
+        int i, j;
+        for(j = 0; j < sorted.size(); j++) {
+            boolean flag = true;
+            for (i = 1; i < sorted.size() - j; i++) {
+                if(sorted.get(i-1).item_number > sorted.get(i).item_number) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                assert(true);       //test geslaagd
+                break;
+            }else {
+                assert(false);      //test failed
+            }
+
+        }
+
+
+    }
+
     @After
     public void enqueueLegos(){
         NewStack newStack = new NewStack(dataSet.size());

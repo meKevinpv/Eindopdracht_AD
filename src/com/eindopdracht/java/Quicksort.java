@@ -1,5 +1,7 @@
 package com.eindopdracht.java;
 
+import java.util.ArrayList;
+
 public class Quicksort {
     int partition(int arr[], int low, int high)
     {
@@ -62,4 +64,8 @@ public class Quicksort {
         System.out.println("sorted array");
         printArray(arr);
     }
+
+    //public ArrayList<Lego> getLegoArray() {
+    //    return dataSet;
+    //}
 }
