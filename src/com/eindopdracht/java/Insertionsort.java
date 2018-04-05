@@ -58,4 +58,8 @@ public class Insertionsort {
 
     }
 
+    public ArrayList<Lego> getLegoArray() {
+        return dataSet;
+    }
+
 }

@@ -32,6 +32,10 @@ public class Bubblesort {
 
     }
 
+    public ArrayList<Lego> getLegoArray() {
+        return dataSet;
     }
+
+}
 
 
