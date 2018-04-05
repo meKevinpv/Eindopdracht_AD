@@ -1,7 +1,5 @@
 package com.eindopdracht.java;
 
-import java.util.ArrayList;
-
 public class NewStack {
     private int top;
     int size;
@@ -37,7 +35,7 @@ public class NewStack {
     public void display(){
 
         for(int i = 0; i <= top; i++){
-            System.out.print(stack[i] + " ");
+            System.out.print(stack[i].name + " ");
         }
         System.out.println();
     }
@@ -45,4 +43,5 @@ public class NewStack {
     public int size() {
         return this.top;
     }
+    public Lego peek() { return stack[top]; }
 }

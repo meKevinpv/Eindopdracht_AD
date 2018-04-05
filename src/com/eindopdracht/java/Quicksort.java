@@ -65,7 +65,7 @@ public class Quicksort {
         printArray(arr);
     }
 
-    //public ArrayList<Lego> getLegoArray() {
-    //    return dataSet;
-    //}
+//    public ArrayList<Lego> getLegoArray() {
+//        return dataSet;
+//    }
 }
