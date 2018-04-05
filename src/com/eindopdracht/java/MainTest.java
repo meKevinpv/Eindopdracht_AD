@@ -16,7 +16,7 @@ public class MainTest {
     private Parser validator;
 
     public MainTest() {
-        validator = new Parser("C:\\Users\\Cornee\\Google Drive\\Eindopdracht_AD\\src\\com\\eindopdracht\\java\\data.csv");
+        validator = new Parser("src\\com\\eindopdracht\\java\\data.csv");
 
         legoSet = validator.getLegoArray();
         listSet = validator.getLinkedList();
