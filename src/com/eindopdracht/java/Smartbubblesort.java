@@ -37,4 +37,7 @@ public class Smartbubblesort {
 
     }
 
+    public ArrayList<Lego> getLegoArray() {
+        return dataSet;
+    }
 }
