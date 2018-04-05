@@ -1,4 +1,4 @@
-package com.eindopdracht.java;
+/*package com.eindopdracht.java;
 
 import org.junit.After;
 
@@ -33,4 +33,4 @@ class NewStackTest {
     public void sizeLegos(){
 
     }
-}
+}*/

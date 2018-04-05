@@ -18,6 +18,12 @@ public class MainTest {
         dataSet = validator.getLegoArray();
     }
 
+    /**
+     *  Bubble sort tester
+     *  Er wordt door de dataSet heen geloopt.
+     *  Als er een lego set niet op de goede plek staat wordt er een boolean false gemaakt en failed de test.
+     *  Als alles op de goede plek staat wordt de boolean niet false en slaagd de test.
+     */
     @Test
     public void Bubblesort(){
         Bubblesort bubblesort = new Bubblesort();
@@ -42,6 +48,13 @@ public class MainTest {
 
 
     }
+
+    /**
+     *  Insertion sort tester
+     *  Er wordt door de dataSet heen geloopt.
+     *  Als er een lego set niet op de goede plek staat wordt er een boolean false gemaakt en failed de test.
+     *  Als alles op de goede plek staat wordt de boolean niet false en slaagd de test.
+     */
 
     @Test
     public void Insertionsort(){
@@ -68,6 +81,13 @@ public class MainTest {
 
     }
 
+    /**
+     *  Smartbubble sort tester
+     *  Er wordt door de dataSet heen geloopt.
+     *  Als er een lego set niet op de goede plek staat wordt er een boolean false gemaakt en failed de test.
+     *  Als alles op de goede plek staat wordt de boolean niet false en slaagd de test.
+     */
+
     @Test
     public void Smartbubblesort(){
         Smartbubblesort smartbubblesort = new Smartbubblesort();
@@ -93,6 +113,7 @@ public class MainTest {
 
     }
 
+    /*                  wachten op randy tot hij quicksort af heeft
     @Test
     public void Quicksort(){
         Quicksort quicksort = new Quicksort();
@@ -117,6 +138,7 @@ public class MainTest {
 
 
     }
+    */
 
     @After
     public void enqueueLegos(){
