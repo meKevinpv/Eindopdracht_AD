@@ -78,8 +78,63 @@ public class MainTest {
      * Daarna wordt het element weer toegevoegd aan het begin van de stack en dus bovenop.
      */
     @Test
-    public void StackTest(){
+    public void StackTest() {
         NewStack newStack = new NewStack(listSet.size());
+    }
+
+    @Test
+    public void Smartbubblesort(){
+        Smartbubblesort smartbubblesort = new Smartbubblesort();
+        sorted = smartbubblesort.getLegoArray();
+
+        int i, j;
+        for(j = 0; j < sorted.size(); j++) {
+            boolean flag = true;
+            for (i = 1; i < sorted.size() - j; i++) {
+                if(sorted.get(i-1).item_number > sorted.get(i).item_number) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                assert(true);       //test geslaagd
+                break;
+            }else {
+                assert(false);      //test failed
+            }
+
+        }
+
+
+    }
+
+    @Test
+    public void Quicksort(){
+        Quicksort quicksort = new Quicksort();
+        sorted = quicksort.getLegoArray();
+
+        int i, j;
+        for(j = 0; j < sorted.size(); j++) {
+            boolean flag = true;
+            for (i = 1; i < sorted.size() - j; i++) {
+                if(sorted.get(i-1).item_number > sorted.get(i).item_number) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                assert(true);       //test geslaagd
+                break;
+            }else {
+                assert(false);      //test failed
+            }
+
+        }
+
+
+    }
+
+    @After
+    public void enqueueLegos(){
+        NewStack newStack = new NewStack(dataSet.size());
 
         for(Lego lego : listSet) {
             newStack.push(lego);
