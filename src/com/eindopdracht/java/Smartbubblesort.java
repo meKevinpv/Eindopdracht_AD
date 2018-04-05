@@ -8,7 +8,7 @@ public class Smartbubblesort {
     private ArrayList<Lego> dataSet = new ArrayList<Lego>();
 
     public Smartbubblesort() {
-        Parser validator = new Parser("C:\\Users\\Siem\\Documents\\GitHub\\Eindopdracht_AD\\src\\com\\eindopdracht\\java\\data.csv");
+        Parser validator = new Parser("src\\com\\eindopdracht\\java\\data.csv");
         System.out.println("smart bubblesort active=====================================================================================================================");
         dataSet = validator.getLegoArray();
 

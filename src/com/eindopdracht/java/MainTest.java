@@ -27,6 +27,11 @@ public class MainTest {
         Bubblesort bubblesort = new Bubblesort();
         sorted = bubblesort.getLegoArray();
 
+        if(sorted.size() == 0){
+            assert(false);
+            return;
+        }
+
         int i, j;
         for(j = 0; j < sorted.size(); j++) {
             boolean flag = true;
@@ -45,12 +50,18 @@ public class MainTest {
         }
 
 
+
     }
 
     @Test
     public void Insertionsort(){
         Insertionsort insertionsort = new Insertionsort();
         sorted = insertionsort.getLegoArray();
+
+        if(sorted.size() == 0){
+            assert(false);
+            return;
+        }
 
         int i, j;
         for(j = 0; j < sorted.size(); j++) {
@@ -76,6 +87,11 @@ public class MainTest {
     public void Smartbubblesort(){
         Smartbubblesort smartbubblesort = new Smartbubblesort();
         sorted = smartbubblesort.getLegoArray();
+
+        if(sorted.size() == 0){
+            assert(false);
+            return;
+        }
 
         int i, j;
         for(j = 0; j < sorted.size(); j++) {
