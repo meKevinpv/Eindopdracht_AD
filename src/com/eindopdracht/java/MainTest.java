@@ -16,14 +16,14 @@ public class MainTest {
     private Parser validator;
 
     public MainTest() {
-        validator = new Parser("C:\\Users\\Cornee\\Google Drive\\Eindopdracht_AD\\src\\com\\eindopdracht\\java\\data.csv");
+        validator = new Parser("src\\com\\eindopdracht\\java\\data.csv");
 
         legoSet = validator.getLegoArray();
         listSet = validator.getLinkedList();
     }
 
     @Test
-    public void Bubblesort(){
+    public void Bubblesort() {
         Bubblesort bubblesort = new Bubblesort();
         sorted = bubblesort.getLegoArray();
 
@@ -151,6 +151,87 @@ public class MainTest {
         System.out.println("Stack name: " + newStack.peek().name);
     }
 
+    // Een test om te checken dat laatste element dat toegevoegd wordt ook het laatste element is van de dataset.
+    @Test
+    public void StackPush() {
+        NewStack newStack = new NewStack(listSet.size());
+
+        for(Lego lego : listSet) {
+            newStack.push(lego);
+        }
+
+        assertEquals(true,newStack.peek().item_number == 648);
+    }
+
+    // Als een element wordt toegevoegd die de size van de stack overschrijdt, return false.
+    @Test
+    public void StackPushFull() {
+        NewStack newStack = new NewStack(listSet.size());
+
+        for(Lego lego : listSet) {
+            newStack.push(lego);
+        }
+
+        Lego insertLego = newStack.peek();
+
+        assertEquals(false, newStack.push(insertLego));
+    }
+
+    // stack.pop() returnt true als de head element verwijderd kan worden en false als de stack leeg is.
+    @Test
+    public void StackPop() {
+        NewStack newStack = new NewStack(listSet.size());
+
+        assertEquals(false, newStack.pop());
+
+        for(Lego lego : listSet) {
+            newStack.push(lego);
+        }
+
+        assertEquals(true, newStack.pop());
+    }
+
+    // Check of de stack leeg is.
+    @Test
+    public void StackEmpty() {
+        NewStack newStack = new NewStack(listSet.size());
+
+        assertEquals(true, newStack.isEmpty());
+
+        for(Lego lego : listSet) {
+            newStack.push(lego);
+        }
+
+        assertEquals(false, newStack.isEmpty());
+    }
+
+    // Check de lengte van de stack.
+    @Test
+    public void StackSize() {
+        NewStack newStack = new NewStack(listSet.size());
+
+        assertEquals(-1, newStack.size());
+
+        for(Lego lego : listSet) {
+            newStack.push(lego);
+        }
+
+        // Een lege stack return -1 als grootte. Vandaar dat van de verwachte stack 1 wordt afgetrokken.
+        assertEquals(listSet.size() - 1, newStack.size());
+    }
+
+    // Check of het laatste element in de lijst ook het laatste element in de stack is.
+    @Test
+    public void StackPeek() {
+        NewStack newStack = new NewStack(listSet.size());
+
+        for(Lego lego : listSet) {
+            newStack.push(lego);
+        }
+
+        assertEquals(listSet.getLast(), newStack.peek());
+    }
+
     /**
      * De queue wordt geïnstantieerd en gepopuleerd.
      * Ter illustratie van het FIFO-principe wordt de head element verwijderd van de queue en lokaal opgeslagen in een variabel.
@@ -181,4 +262,28 @@ public class MainTest {
 
         assertEquals(true,newQueue.peek().item_number == 10247);
     }
+
+    @Test
+    public void QueueEnqueue() {
+        NewQueue newQueue = new NewQueue();
+
+        for(Lego lego : listSet) {
+            newQueue.enqueue(lego);
+        }
+
+        assertEquals(listSet.size(),newQueue.size());
+    }
+
+    @Test
+    public void QueueDequeue() {
+        NewQueue newQueue = new NewQueue();
+
+        for(Lego lego : listSet) {
+            newQueue.enqueue(lego);
+        }
+
+        assertEquals(listSet.size(),newQueue.size());
+    }
+
+
 }

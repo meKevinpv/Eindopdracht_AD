@@ -8,36 +8,30 @@ public class NewStack {
     public NewStack(int parSize){
         size = parSize;
         stack= new Lego[size];
-        top=-1;
+        top = -1;
     }
 
-    public void push(Lego value){
+    public boolean push(Lego value){
         if(top == size-1) {
-            System.out.println("Stack zit vol!");
-        } else {
-            top += 1;
-            stack[top] = value;
+           return false;
         }
+
+        top += 1;
+        stack[top] = value;
+        return true;
     }
 
-    public void pop() {
+    public boolean pop() {
         if(!isEmpty()) {
             top = top - 1;
-        } else {
-            System.out.println("Stack leeg!");
+            return true;
         }
+
+        return false;
     }
 
     public boolean isEmpty(){
         return top==-1;
-    }
-
-    public void display(){
-
-        for(int i = 0; i <= top; i++){
-            System.out.print(stack[i].name + " ");
-        }
-        System.out.println();
     }
 
     public int size() {
