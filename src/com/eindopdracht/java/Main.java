@@ -11,6 +11,6 @@ public class Main {
       Insertionsort insertionsort = new Insertionsort();
       Bubblesort bubblesort = new Bubblesort();
       Smartbubblesort smartbubblesort = new Smartbubblesort();
-      //Parser validator = new Parser("C:\\Users\\Kevin\\Documents\\Eindopdracht\\Eindopdracht_AD\\src\\com\\eindopdracht\\java\\data.csv");
+      //Parser validator = new Parser("C:\\Users\\SequentialSearcher\\Documents\\Eindopdracht\\Eindopdracht_AD\\src\\com\\eindopdracht\\java\\data.csv");
     }
 }

@@ -1,11 +1,10 @@
 package com.eindopdracht.java;
 
-import org.junit.After;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -14,12 +13,20 @@ public class MainTest {
     private LinkedList<Lego> listSet = new LinkedList<>();
     private ArrayList<Lego> sorted = new ArrayList<>();
     private Parser validator;
+    private SequentialSearcher seqSearcher;
+    private SinglyLinkedList testList;
 
     public MainTest() {
         validator = new Parser("src\\com\\eindopdracht\\java\\data.csv");
 
         legoSet = validator.getLegoArray();
         listSet = validator.getLinkedList();
+        seqSearcher = new SequentialSearcher(validator.getLegoArray());
+        testList = new SinglyLinkedList();
+        testList.add("string");
+        testList.add("string");
+        testList.add("3rd in line");
+        testList.add("4th in line");
     }
 
     @Test
@@ -330,6 +337,49 @@ public class MainTest {
 
         assertEquals(newQueue.peek(),listSet.getFirst());
     }
+    @Test
+    public void sequentialSearchTest(){
+        seqSearcher.sequentialSearch(10246);
+        assertEquals(seqSearcher.sequentialSearch(10246),legoSet.get(0));
+        assertEquals(seqSearcher.sequentialSearch(10247),legoSet.get(1));
+        assertEquals(seqSearcher.sequentialSearch(10248),legoSet.get(2));
+        assertEquals(seqSearcher.sequentialSearch(10249),legoSet.get(3));
+        assertEquals(seqSearcher.sequentialSearch(10581),legoSet.get(4));
+        assertEquals(seqSearcher.sequentialSearch(10582),legoSet.get(5));
+    }
 
+    @Test
+    public void singlyLinkedListTest(){
 
+        assertEquals(testList.lastIndexOf("string"),1);
+        assertEquals(testList.get(0),"string");
+        assertEquals(testList.set(1,"string2"),"string");
+        assertEquals(testList.get(1),"string2");
+
+    }
+    @Test
+    public void testSinglylinked(){
+        List<Integer> newList = new SinglyLinkedList<Integer>();
+        newList.add(1);
+        newList.add(2);
+        newList.add(3);
+        assertEquals(newList.contains(2),true);
+        newList.remove(new Integer(2));
+        assertEquals(newList.contains(2),false);
+    }
+    @Test
+    public void subList(){
+        assertEquals(testList.subList(2,3).get(0), "3rd in line");
+        assertEquals(testList.subList(2,3).get(1), "4th in line");
+    }
+    @Test
+    public void toArray(){
+        assertEquals(testList.toArray().length,4);
+        assertEquals(testList.toArray()[2], "3rd in line");
+    }
+    @Test
+    public void addWithIndex(){
+        testList.add(0,"newFirstInLine");
+        assertEquals(testList.get(0),"newFirstInLine");
+    }
 }

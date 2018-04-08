@@ -18,7 +18,7 @@ public class Parser {
     private SinglyLinkedList<Lego> singlyLinkedList = new SinglyLinkedList<Lego>();
     public Parser(String fileLocation){
         String csvFile = fileLocation;
-        //String csvFile = "C:\\Users\\Kevin\\Documents\\GitHub\\ThinkDataStructures\\Eindopdracht\\src\\com\\eindopdracht\\java\\data.csv";
+        //String csvFile = "C:\\Users\\SequentialSearcher\\Documents\\GitHub\\ThinkDataStructures\\Eindopdracht\\src\\com\\eindopdracht\\java\\data.csv";
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ",";
