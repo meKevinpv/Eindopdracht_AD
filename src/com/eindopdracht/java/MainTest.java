@@ -279,6 +279,7 @@ public class MainTest {
         assertEquals(true,newQueue.peek().item_number == 10247);
     }
 
+    // Test de werking van queue.size()
     @Test
     public void QueueEnqueue() {
         NewQueue newQueue = new NewQueue();
@@ -290,6 +291,7 @@ public class MainTest {
         assertEquals(listSet.size(),newQueue.size());
     }
 
+    // Test de werking van queue.enqueue()
     @Test
     public void QueueDequeue() {
         NewQueue newQueue = new NewQueue();
@@ -298,7 +300,35 @@ public class MainTest {
             newQueue.enqueue(lego);
         }
 
+        newQueue.dequeue();
+
+        assertEquals(listSet.size() - 1,newQueue.size());
+    }
+
+    // Test de werking van queue.size()
+    @Test
+    public void QueueSize() {
+        NewQueue newQueue = new NewQueue();
+
+        assertEquals(0,newQueue.size());
+
+        for(Lego lego : listSet) {
+            newQueue.enqueue(lego);
+        }
+
         assertEquals(listSet.size(),newQueue.size());
+    }
+
+    // Test de werking van queue.peek()
+    @Test
+    public void QueuePeek() {
+        NewQueue newQueue = new NewQueue();
+
+        for(Lego lego : listSet) {
+            newQueue.enqueue(lego);
+        }
+
+        assertEquals(newQueue.peek(),listSet.getFirst());
     }
 
 
