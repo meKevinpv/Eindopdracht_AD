@@ -1,7 +1,10 @@
 package com.eindopdracht.java;
 
-public // Java program to demonstrate insert operation in binary search tree
-class BinaryTree {
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class BinaryTree {
+    private ArrayList<Lego> dataSet = new ArrayList<Lego>();
 
     // Class containing left and right child of current node and key value
     class Node {
@@ -18,8 +21,19 @@ class BinaryTree {
     Node root;
 
     // Constructor
-    BinaryTree() {
+    public BinaryTree() {
         root = null;
+        Parser validator = new Parser("C:\\Users\\Randy\\Documents\\GitHub\\Eindopdracht_AD\\src\\com\\eindopdracht\\java\\data.csv");
+        System.out.println("BinarySearchTree insert active=====================================================================================================================");
+        dataSet = validator.getLegoArray();
+
+        //sorting start hier
+        int i, j;
+        for(j = 0; j < dataSet.size(); j++) {
+            for (i = 1; i < dataSet.size() - j; i++) {
+                insert(dataSet.get(i).item_number);
+            }
+        }
     }
 
     // This method mainly calls insertRec()
@@ -60,8 +74,9 @@ class BinaryTree {
     }
 
     // A function to search a given key in BST
-    public Node search(Node root, int key)
+    public Node search(root, int key)
     {
+        System.out.println("Binary search active===========================================================================================================================================");
         // Base Cases: root is null or key is present at root
         if (root==null || root.key==key)
             return root;
@@ -79,5 +94,7 @@ class BinaryTree {
         BinaryTree tree = new BinaryTree();
 
         tree.inorder();
+
+        tree.search(null, 5004737);
     }
 }
