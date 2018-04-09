@@ -73,28 +73,10 @@ public class BinaryTree {
         }
     }
 
-    // A function to search a given key in BST
-    public Node search(root, int key)
-    {
-        System.out.println("Binary search active===========================================================================================================================================");
-        // Base Cases: root is null or key is present at root
-        if (root==null || root.key==key)
-            return root;
-
-        // val is greater than root's key
-        if (root.key > key)
-            return search(root.left, key);
-
-        // val is less than root's key
-        return search(root.right, key);
-    }
-
     // Driver Program to test above functions
     public static void main(String[] args) {
         BinaryTree tree = new BinaryTree();
 
         tree.inorder();
-
-        tree.search(null, 5004737);
     }
 }
