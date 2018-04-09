@@ -2,10 +2,10 @@ package com.eindopdracht.java;
 
 import java.util.ArrayList;
 
-public class Kevin {
+public class SequentialSearcher {
     private ArrayList<Lego> arrayList;
 
-    public Kevin(ArrayList<Lego> arrayList){
+    public SequentialSearcher(ArrayList<Lego> arrayList){
         this.arrayList = arrayList;
     }
     public Lego sequentialSearch(int id){

@@ -29,9 +29,6 @@ public class SinglyLinkedList<E> implements List<E> {
             this.cargo = cargo;
             this.next = next;
         }
-        public String toString() {
-            return "Node(" + cargo.toString() + ")";
-        }
     }
 
     private int size;            // keeps track of the number of elements
@@ -49,16 +46,7 @@ public class SinglyLinkedList<E> implements List<E> {
      * @param args
      */
     public static void main(String[] args) {
-        // run a few simple tests
-        List<Integer> mll = new SinglyLinkedList<Integer>();
-        mll.add(1);
-        mll.add(2);
-        mll.add(3);
-        System.out.println(Arrays.toString(mll.toArray()) + " size = " + mll.size());
-
-        mll.remove(new Integer(2));
-        System.out.println(Arrays.toString(mll.toArray()) + " size = " + mll.size());
-    }
+        }
 
     @Override
     public boolean add(E element) {
@@ -87,15 +75,6 @@ public class SinglyLinkedList<E> implements List<E> {
     }
 
     @Override
-    public boolean addAll(Collection<? extends E> collection) {
-        boolean flag = true;
-        for (E element: collection) {
-            flag &= add(element);
-        }
-        return flag;
-    }
-
-    @Override
     public boolean addAll(int index, Collection<? extends E> collection) {
         throw new UnsupportedOperationException();
     }
@@ -113,12 +92,12 @@ public class SinglyLinkedList<E> implements List<E> {
 
     @Override
     public boolean containsAll(Collection<?> collection) {
-        for (Object obj: collection) {
-            if (!contains(obj)) {
-                return false;
-            }
-        }
-        return true;
+        return false;
+    }
+
+    @Override
+    public boolean addAll(Collection<? extends E> c) {
+        return false;
     }
 
     @Override

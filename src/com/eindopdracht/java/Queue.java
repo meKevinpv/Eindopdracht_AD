@@ -24,9 +24,4 @@ class NewQueue {
     public Lego peek() {
         return list.peek();
     }
-
-    // Returns het eerste element (head) en verwijdert het uit de lijst.
-    public Lego poll() {
-        return list.poll();
-    }
 }
