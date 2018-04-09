@@ -23,7 +23,7 @@ public class BinaryTree {
     // Constructor
     public BinaryTree() {
         root = null;
-        Parser validator = new Parser("C:\\Users\\Randy\\Documents\\GitHub\\Eindopdracht_AD\\src\\com\\eindopdracht\\java\\data.csv");
+        Parser validator = new Parser("src\\com\\eindopdracht\\java\\data.csv");
         System.out.println("BinarySearchTree insert active=====================================================================================================================");
         dataSet = validator.getLegoArray();
 
@@ -74,7 +74,7 @@ public class BinaryTree {
     }
 
     // A function to search a given key in BST
-    public Node search(root, int key)
+    public Node search(Node root, int key)
     {
         System.out.println("Binary search active===========================================================================================================================================");
         // Base Cases: root is null or key is present at root
